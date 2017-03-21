@@ -1,0 +1,54 @@
+#include <stdio.h>
+#include <wiringPi.h>
+const int pwmPin = 18;   //Hardware Broadcom PWM pin
+const int pwmValue = 650;// PWM duty cycle value
+const int dr_pos=11;
+//const int pwmvalue_high = 1000;
+const int dir = 22; //GPIO direction pin
+
+main()
+{
+int i;                 //iteration variable
+long int l;            //delay variable
+unsigned int pos_cntr;
+char temp;
+pos_cntr=0;
+wiringPiSetup();       //Pi hardware initialization function
+wiringPiSetupGpio();   //Pi GPIO configuration function
+i=0;                   //initialize i variable
+pinMode(pwmPin, PWM_OUTPUT);  //Configure PWM output mode
+pinMode(dir, OUTPUT);         //COnfigure motor direction select pin
+pinMode(11, INPUT);
+pwmSetRange(1023);
+pwmSetClock(960); //pwm=19.2 MHZ /clock
+pwmWrite(pwmPin,0); // reset to 0
+digitalWrite(dir, HIGH);
+//printf ("gets here atleast");
+delay(500);
+//      if (digitalRead(11)
+  //       {
+            pwmWrite(pwmPin, 25);
+
+         while(i<4)
+{        
+i++;
+VariableSPEED = VariableSPEED + 75
+printf ("\n Motor FInished Turn no %d", i);
+          while (digitalRead(11)==1)
+
+           {
+            }
+            while (digitalRead(11)==0) 
+            {
+            }
+
+
+    //   printf("\n Motor Finished Turn no %d", i);           
+
+}
+pwmWrite(pwmPin, 0);
+   
+
+printf ("\n Motor Finished Running \n ");  //Display message 
+
+}
